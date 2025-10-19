@@ -1,0 +1,157 @@
+body {
+  background: url(https://i.pinimg.com/originals/09/8d/ea/098deacf1d889cf37399007b82667c6d.jpg) no-repeat center center fixed; background-size: cover;
+  /* display: flex;  */
+  /* justify-content: center;  */
+  /* align-items: center;  */
+  /* margin: 0; */
+}
+
+.card {
+  width: 320px;
+  height: 509px;
+  background-color: white;
+  margin: 30px;
+  /* clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%, 0 30px); */
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  /* border: 3px solid blue; */
+  background: linear-gradient(135deg, transparent, transparent 20px, white 20px, white 20px);
+  /* display: none; */
+
+  /* flex-direction: column; */
+}
+
+/* .card::before {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%, 0 30px);
+  box-shadow: 0 0 0 3px blue;
+  pointer-events: none;
+} */
+
+.card:after {
+  content: ""; display: block; position: absolute; top: -4px; left: -4px; width: calc(100% + 8px); height: calc(100% + 8px); z-index: -1;
+  background: linear-gradient(135deg, transparent, transparent 20px, #2ea8e6 20px, #2ea8e6 20px);
+  border-radius: 10px;
+
+}
+
+.card.card--active {
+  /* border: 3px solid palevioletred */
+  background: linear-gradient(135deg, transparent, transparent 20px, white 20px, white 20px);
+}
+
+.card.card--active:after {
+  content: ""; display: block; position: absolute; top: -4px; left: -4px; width: calc(100% + 8px); height: calc(100% + 8px); z-index: -1;
+  background: linear-gradient(135deg, transparent, transparent 20px, pink 20px, pink 20px);
+}
+
+.card--disabled {
+  background: #f5f5f5;
+  border-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.card--disabled::after {
+  content: "";
+  position: absolute;
+  inset: 0;               /* заполняет всю карточку */
+  border-radius: inherit; /* повторяет закругления */
+  background: rgba(255, 255, 255, 0.6); /* мягкое "забеливание" */
+  pointer-events: none;   /* не блокирует клики */
+}
+ 
+
+/* .card--disabled .card {
+  filter: grayscale(100%) opacity(0.35);
+} */
+
+.circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: blue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 0.7;
+}
+.circle.circle--active {
+  background-color: palevioletred;
+}
+
+.circle.circle--disabled {
+  background-color: grey;
+}
+
+.title {
+ position: relative;
+ margin-top: 0;
+
+ color: yellow;
+ font-weight: 100;
+ text-align: center;
+ font-weight: bold;
+ font-size: 12px;
+}
+
+.link {
+  color: blue;
+  text-decoration: underline dashed;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+}
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
